@@ -1,0 +1,39 @@
+
+
+package soma intervalor
+
+public class Numeros (
+
+public int numero inicial;
+
+public int numero final;
+
+public int soma-01
+
+public int soma (int nl, int n?)
+
+1
+
+this.numoro_inicial ni
+
+this.numero final n2:
+
+for (int this numero inicial: 1 this numero final; i++)
+
+this.soma += 1;
+
+return this.soms/
+
+package soma intervalo:
+
+public class Main {
+
+public static void main(String args[])
+
+System.out.println("ola mundo");
+
+Numeros numeros new Numeros();
+
+int retorno numeros.soma (10, 2011
+
+System.out.println(retorno)/

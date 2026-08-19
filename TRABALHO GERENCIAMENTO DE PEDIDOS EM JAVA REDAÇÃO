@@ -1,0 +1,77 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
+// Classe ItemPedido
+class ItemPedido {
+    private String nomeProduto;
+    private double preco;
+
+    public ItemPedido(String nomeProduto, double preco) {
+        this.nomeProduto = nomeProduto;
+        this.preco = preco;
+    }
+
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+}
+
+// Classe Pedido
+class Pedido {
+    private int numeroPedido;
+    private List<ItemPedido> itensPedido;
+    private double valorTotal;
+
+    public Pedido(int numeroPedido) {
+        this.numeroPedido = numeroPedido;
+        this.itensPedido = new ArrayList<>();
+        this.valorTotal = 0;
+    }
+
+    public void adicionarItem(String nomePrato, double preco) {
+        ItemPedido item = new ItemPedido(nomePrato, preco);
+        itensPedido.add(item);
+        valorTotal += preco;
+    }
+
+    public void exibirResumo() {
+        System.out.println("Pedido: " + numeroPedido);
+        System.out.println("Itens:");
+
+        for (ItemPedido item : itensPedido) {
+            System.out.println(
+                item.getNomeProduto() + " - R$ " + item.getPreco()
+            );
+        }
+
+        System.out.println("Valor total: R$ " + valorTotal);
+    }
+}
+
+// Classe Main
+public class Main {
+    public static void main(String[] args) {
+
+        Pedido pedido = new Pedido(1);
+
+        pedido.adicionarItem("Hambúrguer", 25.00);
+        pedido.adicionarItem("Batata Frita", 12.00);
+        pedido.adicionarItem("Refrigerante", 7.00);
+
+        pedido.exibirResumo();
+    }
+}
+
+Saída esperada:
+
+Pedido: 1
+Itens:
+Hambúrguer - R$ 25.0
+Batata Frita - R$ 12.0
+Refrigerante - R$ 7.0
+Valor total: R$ 44.0
